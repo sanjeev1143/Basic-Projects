@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #img1{
+            height: 300px;
+            width: 300px;
+            background: no-repeat no-repeat center;
+            background-size: 300px 300px ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Save Image</h1>
+    <input type="file" id = "inp">
+    <div id="img1"></div>
+    <script>
+        let uploadImg =  "";
+        document.querySelector("#inp").addEventListener("change",function(){
+            // console.log(this.files);
+            const reader = new FileReader();
+            
+            reader.addEventListener("load",()=>{
+                uploadImg = reader.result;
+                document.querySelector("#img1").style.backgroundImage = `url(${uploadImg})`
+
+
+                //localStorage.setItem("img",reader.result);
+            })
+            reader.readAsDataURL(this.files[0]);
+
+        })
+        // document.addEventListener("DOMContentLoaded",()=>{
+        //     const recentImg = localStorage.getItem("img");
+        //     if(recentImg){
+        //         document.querySelector("#img").setAttribute("src",recentImg);
+        //     }
+            
+        // })
+        
+        
+    </script>
+</body>
+</html>

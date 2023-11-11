@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Distance Calculator</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css"
+        integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="App.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="imgs"><img src="Graviti.png" alt=""></div>
+
+        <h2 style="height:30px ; position: absolute; top: 113px; left: 440px;">Let's calculate <b>distance</b> from
+            Google
+            maps
+        </h2>
+        <div class="container-fluid box1">
+
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="from" class="col-xs-2 control-label" style="position:absolute; top:200px;left:30px;"><i
+                            class="far fa-dot-circle">Origin</i></label>
+                    <div class="col-xs-4 input-group mb-3">
+                        <span class="input-group-text"
+                            style="background-color: white;border:0;border-radius: 4px; position: absolute; top:224px; left: 30px; z-index: 1000; height: 56px;"
+                            id="basic-addon1"><img style="width:24px;height:27px" src="./marker.png" alt=""
+                                id="mark" /></span>
+                        <input style="border:0" type="text" class="form-control input-markerholder" id="from"
+                            placeholder="Origin" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-xs-offset-2 col-xs-10">
+                    <input class="btn btn-info btn-lg cbtn " value="Calculate" type="button" onclick="calcRoute();">
+                </div>
+                <div class="form-group">
+
+                    <label for="to" class="col-xs-2 control-label" style="position:absolute; top:340px;left:30px;"><i
+                            class="fas fa-map-marker-alt">Destination</i></label>
+
+                    <div class="col-xs-4 input-group mb-3">
+                        <span class="input-group-text"
+                            style="background-color: white;border:0;border-radius: 4px; position: absolute; top:354px; left: 30px; z-index: 1000; height: 56px;"
+                            id="basic-addon1"><img style="width:24px;height:27px" src="./marker.png" alt=""
+                                id="mark" /></span>
+                        <input style="border:0" type="text" class="form-control input-markerholder" id="to"
+                            placeholder="Destination" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                </div>
+
+            </form>
+
+            <div class="outputs" style="height: 155px;
+            width: 489.9999694824219px;
+            position: absolute;
+            left: 156px;
+            top: 330px;
+            border-radius: 8px;
+
+            ">
+                <div class="op" style="
+                height: 75px;
+                border-radius:8px;
+                ">
+                    <div class="dist" style="padding-left:10px;padding-bottom: 5px ;color: #1E2A32;width: 246px;
+                    height: 24px;
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 120%;">Distances</div>
+                    <div id="distval" style="margin-left: 85px;"></div>
+                </div>
+                <div id="output" style="padding: 33px;">
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-right: 5.21vw;">
+            <div id="googleMap">
+            </div>
+        </div>
+    </div>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolXVBph__8LXk-JukgnxDUI4LPDQAsxQ&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Main.js"></script>
+</body>
+
+</html>

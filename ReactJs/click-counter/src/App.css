@@ -1,0 +1,46 @@
+main {
+  text-align: center;
+  vertical-align: center;
+  line-height: 100vh
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #00203FFF;
+  display: flex;
+  justify-content: center;
+
+}
+
+.App {
+  background-color: #ADEFD1FF;
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  height: 40vh;
+  width: 20vw;
+}
+
+.App h1 {
+  text-align: center;
+  margin-top: 7vh;
+  color: #00203FFF;
+  font-size: xxx-large;
+}
+
+.btn {
+  display: flex;
+  margin-top: 9vh;
+  justify-content: space-around;
+  border-radius: 8px;
+  height: fit-content;
+  width: 100%;
+}
+
+.btn .item {
+  background-color: #00203FFF;
+  border-radius: 8px;
+}

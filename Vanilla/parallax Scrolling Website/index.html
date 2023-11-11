@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title>Parallax Scrolling Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="https://th.bing.com/th/id/OIP.GQkKG-e_LlfWH0up7MUx3wHaHg?pid=ImgDet&rs=1" alt="">
+
+        <div class="div1">
+
+            <a href="https://www.nasa.gov/" class="home">Home</a>
+            <a href="https://www.nasa.gov/about/index.html" class="about">About</a>
+            <a href="https://www.nasa.gov/multimedia/imagegallery/iotd.html" class="gallery">Gallery</a>
+            <a href="https://www.nasa.gov/socialmedia" class="follow">Follow</a>
+            <a href="https://www.nasa.gov/about/contact/index.html" class="contact">Contact</a>
+
+        </div>
+        <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Report</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Details</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" alt="" id="stars">
+        <img src="moon.png" alt="" id="moon">
+        <h2 id="text">NASA Daily</h2>
+        <button id="exp">Explore</button>
+        <img src="mountains_behind.png" alt="" id="mountains_behind">
+        <img src="mountains_front.png" alt="" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            $(".div1").hide();
+        })
+        $(document).ready(() => {
+            $("#exp").click(() => {
+                $(".div1").toggle(500);
+            })
+        })
+        const url = "https://api.nasa.gov/planetary/apod?api_key=f3CakGKD6JuaY6vEkO8UQkbtO7Qb1UOAWwnTPbsc";
+        const sec = document.getElementById("sec");
+        var date, expl, iurl, title;
+        fetch(url)
+            .then(respo => respo.json())
+            .then((data) => {
+                date = (data.date);
+                expl = (data.explanation);
+                iurl = (data.hdurl);
+                title = (data.title);
+                sec.innerHTML = ` <div class="box1">
+        <div class="in">
+            <h1 class="hd">${title}</h1>
+            <h3>${date}</h3>
+        </div>
+        <br><br>
+        <img src=${iurl} class = "ig" alt="">
+        <p class = 'para'><br>${expl}</p>
+    </div>`;
+            })
+            .catch((e) => {
+                alert(e);
+            })
+        const url2 = "https://api.nasa.gov/EPIC/api/natural?api_key=f3CakGKD6JuaY6vEkO8UQkbtO7Qb1UOAWwnTPbsc";
+        fetch(url2)
+            .then(respo => respo.json())
+            .then((data) => {
+
+                console.log(data);
+                console.log(data[0].caption);
+
+
+            })
+
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let mountains_fronts = document.getElementById('mountains_front');
+        let text = document.getElementById('text');
+        let exp = document.getElementById('exp');
+        let header = document.querySelector('header')
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_fronts.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 0.5 + 'px';
+            exp.style.marginTop = value * 1.0 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+
+</html>

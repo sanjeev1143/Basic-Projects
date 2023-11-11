@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  h1{
+    align-self: center;
+  }
+  
+  .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  table{
+    height: 200px;
+    width:200px;
+    background-color: #61d920;
+  }
+  #but{
+    height:50px;
+    width:80px;
+    background-color:#4be7e4;
+    border-radius: 3px;
+  }
+  #screen{
+    height:100px;
+    width: 90%;
+  }
+  .eq{
+    height:50px;
+    width:166px;
+    background-color:#4be7e4;
+    border-radius: 3px;
+  }
+  input{
+    margin:2px;
+    height:100px;
+    width:100%;
+    border: 2px solid #e88293;
+  }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="box">
+        <div id="item">
+            <input id="countryip" type="text" placeholder="Enter Country Name">
+            <button id="search" type="button" onclick="abc()">Search</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script>
+        const searchb = document.getElementById("search");
+        const results = document.getElementById("result");
+        const inputs = document.querySelector("#countryip");
+
+
+        console.log(inputs);
+        console.log(searchb);
+        console.log(results);
+        function abc() {
+
+            let Cname = inputs.value;
+            //let Cname = "India";
+            console.log(Cname)
+            let URL = `https://restcountries.com/v3.1/name/${Cname}?fullText=true`;
+            console.log(URL);
+            fetch(URL)
+                .then((response) => response.json())
+                .then((data) => {
+                    const capital = (data[0].capital[0]);
+                    const flag = (data[0].flags.svg);
+                    const name = (data[0].name.common);
+                    const continents = (data[0].continents[0]);
+                    const population = (data[0].population);
+                    const cur = (Object.keys(data[0].currencies)[0])
+                    const currency = (data[0].currencies[cur].name);
+                    const languages = (Object.values(data[0].languages).toString().split(",").join(","));
+                    result.innerHTML = `<div class = "inside"><img src ="${flag}" class = "flag-img">
+                    <h1>${name}</h1> 
+                        <ul>
+                        <li><b>Capital:</b>${capital}</li>
+                        <li><b>Continent:</b>${continents}</li>
+                        <li><b>Population:</b>${population}</li>
+                        <li><b>Currency:</b>${currency}--${cur} </li>
+                        <li><b>Languages:</b>${languages}</li>
+                        </ul> </div>`;
+                })
+                .catch(e => {
+                    alert(e)
+                })
+
+        }
+    </script>
+</body>
+
+</html>

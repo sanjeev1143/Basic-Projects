@@ -1,0 +1,29 @@
+body {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.box {
+    display: grid;
+    border: 1px solid black;
+    padding: 1vh;
+    grid-template-columns: repeat(4, 2fr);
+}
+
+input.checkbox {
+    height: 25px;
+    width: 25px;
+    border: 2px solid black;
+    position: relative;
+    bottom: 25vh;
+    left: 2.5vw;
+}
+
+.item img {
+    height: 30vh;
+    width: 20vw;
+}

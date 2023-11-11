@@ -1,0 +1,86 @@
+.eg1 {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.items {
+
+  height: 30vh;
+  width: 100%;
+}
+
+.imageseg1 {
+  margin: 0vh 1vh 0 1vh;
+  width: 100vw;
+  height: 65vh;
+
+
+}
+
+.eg1Items {
+  font-family: 'Josefin Sans', sans-serif;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 1vh;
+  border: 1px solid black;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.eg1Items h4 {
+  text-align: center;
+}
+
+.label {
+  position: absolute;
+  padding: 0.1em 2em;
+  margin: 0;
+  z-index: 10;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 14px;
+  pointer-events: auto;
+  box-shadow: rgba(0, 0, 0, 0.5) 0.5px 0.5px 3px;
+  background-color: rgb(250, 218, 94);
+  color: rgb(18, 18, 18);
+  top: 3vh;
+  margin-left: 10vw;
+
+  transform: translateY(-100%) rotate(90deg) translateX(70.7107%) rotate(0deg);
+  transform-origin: right bottom;
+}
+
+.label2 {
+  position: absolute;
+  padding: 0.1em 2em;
+  margin: 0;
+  z-index: 10;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 14px;
+  pointer-events: auto;
+  box-shadow: rgba(0, 0, 0, 0.5) 0.5px 0.5px 3px;
+  background-color: green;
+  color: rgb(18, 18, 18);
+  top: 3vh;
+  margin-left: 10vw;
+
+  transform: translateY(-100%) rotate(90deg) translateX(70.7107%) rotate(0deg);
+  transform-origin: right bottom;
+}
+
+.price {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: fit-content;
+  margin: 0;
+}
+
+.eg1Items {
+  padding: 0%;
+}
